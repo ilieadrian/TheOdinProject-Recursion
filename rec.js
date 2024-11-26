@@ -16,7 +16,21 @@ function fibs(num) {
     console.log(fib);
     }
 
-fibs(8)
+// fibs(8)
 
+function fibsRec(num) {
+    console.log("This was printed recursively");
+
+
+    if (num === 0 || num === 1) return [0];
+    if (num === 2) return [0, 1]
+
+
+    return [...fibsRec(num-1), 
+    fibsRec(num-1)[num - 2] + fibsRec(num-1)[num - 3]];
+
+}
+
+fibsRec(8)
 
 
