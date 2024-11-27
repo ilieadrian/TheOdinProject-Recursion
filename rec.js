@@ -6,31 +6,28 @@ function fibs(num) {
     if (num <= 1){
         fib = num;
     }
-  
+
     for(let i = 2; i < num; i++){
         const a = fib[i - 1];
         const b = fib[i - 2];
         
         fib.push(a + b)
     }
-    console.log(fib);
+    return fib;
     }
 
-// fibs(8)
+console.log(fibs(8))
 
 function fibsRec(num) {
-    console.log("This was printed recursively");
+    if (num === 0) return [];
+    if (num === 1) return [0];
+    if (num === 2) return [0, 1];
 
-
-    if (num === 0 || num === 1) return [0];
-    if (num === 2) return [0, 1]
-
-
-    return [...fibsRec(num-1), 
-    fibsRec(num-1)[num - 2] + fibsRec(num-1)[num - 3]];
-
+    let fib = fibsRec(num - 1);
+    fib.push(fib[fib.length - 1] + fib[fib.length - 2]);
+    return fib;
 }
 
-fibsRec(8)
+console.log(fibsRec(8)); 
 
 

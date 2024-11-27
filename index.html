@@ -16,12 +16,10 @@
             if (num === 2) return [0, 1]
 
 
-            return [...fibsRec(num-1), 
-            fibsRec(num-1)[num - 2] + fibsRec(num-1)[num - 3]];
-            // let fib = fibsRec(num - 1)
-            // fib.push(fib[fib.length - 1] + fib[fib.length - 2]);
-            // console.log(fib.length)
-            // return fib;
+            let fib = fibsRec(num - 1); // Get the sequence up to num - 1
+            fib.push(fib[fib.length - 1] + fib[fib.length - 2]); // Add the next number
+            return fib;
+       
 
             
 
