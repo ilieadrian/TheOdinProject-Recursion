@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
+//1.Build a function mergeSort that takes in an array and returns a sorted array, using a recursive merge sort methodology. 
+//An input of [3, 2, 1, 13, 8, 5, 0, 1] should return [0, 1, 1, 2, 3, 5, 8, 13], and an input of [105, 79, 100, 110] should return [79, 100, 105, 110].
 
 function mergeSort(arr){
     if(arr.length === 1){
@@ -30,10 +23,7 @@ function merge(left, right) {
 
     while(leftIndex < left.length && rightIndex < right.length){
         if(left[leftIndex] < right[rightIndex]){
-            console.log("left[leftIndex] ", left[leftIndex] )
-            console.log("right[rightIndex] ", right[rightIndex] )
             resultArr.push(left[leftIndex]);
-            console.log(resultArr)
             leftIndex++;
         } else {
             resultArr.push(right[rightIndex]);
@@ -48,7 +38,3 @@ function merge(left, right) {
 
 console.log(mergeSort([3, 2, 1, 13, 8, 5, 0, 1]))
 console.log(mergeSort([105, 79, 100, 110]))
-console.log(mergeSort([1]))
-    </script>
-</body>
-</html>
